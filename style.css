@@ -249,82 +249,201 @@
 
 
 
-  /* ------ portfolio ------*/
-   #portfolio{
+ /* ------ portfolio ------*/
+#portfolio {
     padding: 50px 0;
-            }
-   .work-list{
+}
+
+.work-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
-                    }
-.work{
+}
+
+.work {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-}
-.work img{
-width:100%;
-border-radius: 10px;
-display: block;
-transition: transform 0.5s;
+    height: 350px; /* Optional: control height */
 }
 
-.layer{
-width: 100%;
-height: 0%;
-background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
- border-radius: 10px;
-position: absolute;
-left: 0;
-bottom:0;
-overflow: hidden;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-padding: 0 40px;
-text-align: center;
-font-size: 14px;
-transition: height 0.5s;
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
 }
-.layer h3{
+
+.layer {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    padding: 20px;
+    opacity: 0;
+    transition: 0.5s;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.layer::-webkit-scrollbar {
+    display: none;
+}
+
+.layer h3 {
     font-weight: 500;
     margin-bottom: 20px;
-    }
-    .layer a{
-        margin-top: 20px;
-        color: #ff004f;
-        text-decoration: none;
-        font-size: 18px;
-        line-height: 60px;
-        background: #fff;
-        width: 60px;
-        height: ¹60px;
-        border-radius: 50%;
-        text-align: center;
-        }
-        .work:hover img{
-transform:scale(1.1) ;
-        }
-        .work:hover .layer{
-            height: 100%;
-        }
-        .btn{
-            display:block;
-            margin: 50px auto;
-            width: fit-content;
-            border: 1px solid #ff004f;
-            padding: 14px 50px;
-            border-radius: 6px;
-            text-decoration: none;
-            color: #fff;
-            transition: background 0.5s;
-        }
-        .btn:hover{
-            background: #ff004f;
-        }
+    color: #fff;
+}
+
+.layer p {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.layer a {
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+}
+
+.work:hover img {
+    transform: scale(1.1);
+}
+
+.work:hover .layer {
+    opacity: 1;
+}
+
+.btn {
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: #ff004f;
+}
+
+
+         /* ------ certifications  ------*/
+#certifications {
+    padding: 50px 0;
+}
+
+.certificates-scroll-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.certificates-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px 40px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.certificates-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.certificate-card {
+    min-width: 300px;
+    background: #262626;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 0 0 auto;
+    transition: 0.5s;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.certificate-card:hover {
+    background: #ff004f;
+    transform: translateY(-10px);
+}
+
+.certificate-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.certificate-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.certificate-card p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.certificate-card a {
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.certificate-card a:hover {
+    background: #fff;
+    color: #262626;
+}
+
+/* Scroll arrows reused */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #111;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0.7;
+}
+
+.scroll-btn.left {
+    left: 0;
+}
+
+.scroll-btn.right {
+    right: 0;
+}
+
         /*----- contact -----*/
 .contact-left{
 flex-basis: 35%;

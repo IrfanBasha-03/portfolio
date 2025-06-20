@@ -17,6 +17,7 @@
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <i class="fas fa-times" onclick="closemenu()"></i>
@@ -51,9 +52,9 @@
                         <ul>
                             <li><span>Cloud Platforms</span><br>AWS (EC2, S3, Lambda, VPC, CloudFormation, IAM, Athena, Cloudwatch, Amplify, SNS & SQS, ECS AND EKS)</li>
                             <li><span>Data Analysis & Visualization</span><br>Data Cleaning, Data Transformation, Data Visualization, Statistical Analysis</li>
-                            <li><span>Programming Languages</span><br>Python (Pandas, MatPlotLib), Java full-stack, JavaScript, MySQL</li>
-                            <li><span>Databases</span><br>Big Query</li>
-                            <li><span>BI & Visualization Tools</span><br>Power BI, MS Excel, Google Data Studio, KNIME, Tableau, Jupyter Notebooks</li>
+                            <li><span>Programming Languages</span><br>Python (Pandas, MatPlotLib), java</li>
+                            <li><span>Databases</span><br>Big Query, MySQL,MongoDB</li>
+                            <li><span>BI & Visualization Tools</span><br>Power BI, MS Excel, Tableau</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="experience">
@@ -107,13 +108,13 @@
           <i class="fa-solid fa-lock"></i>
           <h2>Security Audit</h2>
           <p>Performed IAM policy audits and compliance scans in AWS cloud.</p>
-          <a href="security.html">Learn more</a>
+           <a href="under_construction.html">Learn more</a>
         </div>
         <div class="service-card">
           <i class="fa-solid fa-database"></i>
           <h2>Database Optimization</h2>
           <p>Reduced SQL load time by 60% with indexing and query optimization.</p>
-          <a href="database.html">Learn more</a>
+          <a href="under_construction.html">Learn more</a>
         </div>
       </div>
       
@@ -129,10 +130,10 @@
             <h1 class="sub-title">My Work</h1>
             <div class="work-list">
                 <div class="work">
-                    <img src="image/keylogger.png">
+                    <img src="image/s1s2.png">
                     <div class="layer">
-                        <h3>Keylogger</h3>
-                        <p>A keylogger is a type of malware or hardware that records the keys a user types on a keyboard.</p>
+                        <h3>SEGFORMER-BASED SEMANTIC SEGMENTATION OF WATER BODIES USING SENTINEL-1 AND SENTINEL-2 SATELLITE IMAGERY</h3>
+                        <p>Water body segmentation is crucial for environmental monitoring, flood prediction, and water resource management. This project introduces an advanced deep learning approach using SegFormer, a transformer-based model, for accurate semantic segmentation of water bodies from Sentinel-1 and Sentinel-2 satellite imagery. Unlike traditional U-Net models, SegFormer enhances scalability, real-time inference, and generalization across diverse terrains.</p>
                         <a href="keylogger.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         <a href="https://github.com/yourusername/keylogger" target="_blank"><i class="fab fa-github"></i></a>
 
@@ -166,6 +167,45 @@
 
         </div>
     </div>
+
+   <!-- ---------Certifications--------- -->
+<div id="certifications">
+  <div class="container">
+    <h1 class="sub-title">Certifications</h1>
+    
+    <div class="certificates-scroll-wrapper">
+      <button class="scroll-btn left" onclick="scrollCerts(-1)">&#10094;</button>
+      
+      <div class="certificates-scroll-container" id="certsScroll">
+        <div class="certificate-card">
+          <img src="certificates/Data_Analytics.png" alt="DA">
+          <h2>Google Data Analytics Professional Certificate</h2>
+          <p>Issued by Coursera (2025)</p>
+          <a href="under_construction.html">View Certificate</a>
+
+
+        </div>
+        <div class="certificate-card">
+          <img src="image/powerbi-cert.png" alt="Power BI Certificate">
+          <h2>Generative AI - Medical assistance</h2>
+          <p>Issued by ITExpert Training (2025)</p>
+           <a href="under_construction.html">View Certificate</a>
+        </div>
+        <div class="certificate-card">
+          <img src="image/aws-security-cert.png" alt="AWS Security Essentials">
+          <h2>AWS Solution architecture</h2>
+          <p>Coming soon(202-)</p>
+           <a href="under_construction.html">View Certificate</a>
+        </div>
+      </div>
+      
+      <button class="scroll-btn right" onclick="scrollCerts(1)">&#10095;</button>
+    </div>
+  </div>
+</div>
+
+
+
 
     <!-- ---------Contact--------- -->
     <div id="contact">
@@ -254,7 +294,16 @@
   }
 </script>
 
-
+<script>
+  function scrollCerts(direction) {
+    const container = document.getElementById('certScroll');
+    const scrollAmount = 320;
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+</script>
 
 </body>
 </html>
