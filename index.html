@@ -76,33 +76,52 @@
         </div>
     </div>
 
-    <!-- ---------Services--------- -->
-    <div id="services">
-        <div class="container">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services-list">
-                <div>
-                    <i class="fa-solid fa-code"></i>
-                    <h2>HR Analytics Dashboard</h2>
-                    <p>Created a dynamic dashboard using Power BI, resulting in 8
-                        visualizations of customer satisfaction to uncover actionable insights that drive informed decision making.</p>
-                    <a href="#">Learn more</a>
-                </div>
-                <div>
-                    <i class="fa-solid fa-crop"></i>
-                    <h2>UI/UX Design</h2>
-                    <p>I design intuitive and visually engaging user interfaces with a strong focus on user experience. My approach combines user research, wireframing, prototyping, and usability testing to create designs that are both functional and aesthetically pleasing.</p>
-                    <a href="#">Learn more</a>
-                </div>
-                <div>
-                    <i class="fa-brands fa-app-store"></i>
-                    <h2>AWS Cloud Services</h2>
-                    <p>Amazon Web Services (AWS) is a comprehensive and widely adopted cloud platform offering over 200 fully featured services from data centers globally. It enables businesses and developers to build, deploy, and scale applications in a secure and cost-effective way.</p>
-                    <a href="#">Learn more</a>
-                </div>
-            </div>
+  <!-- ---------Services--------- -->
+<div id="services">
+  <div class="container">
+    <h1 class="sub-title">My Services</h1>
+    
+    <div class="services-scroll-wrapper">
+      <button class="scroll-btn left" onclick="scrollServices(-1)">&#10094;</button>
+      
+      <div class="services-scroll-container" id="servicesScroll">
+        <div class="service-card">
+          <i class="fa-solid fa-code"></i>
+          <h2>HR Analytics Dashboard</h2>
+          <p>Created Power BI dashboards with customer satisfaction insights.</p>
+          <a href="hr-dashboard.html">Learn more</a>
         </div>
+        <div class="service-card">
+          <i class="fa-solid fa-crop"></i>
+          <h2>UI/UX Design</h2>
+          <p>Designed intuitive interfaces using wireframes, prototypes & testing.</p>
+          <a href="uiux.html">Learn more</a>
+        </div>
+        <div class="service-card">
+          <i class="fa-brands fa-aws"></i>
+          <h2>AWS Cloud Services</h2>
+          <p>Built secure infrastructure using EC2, Lambda, IAM, VPC & more.</p>
+          <a href="aws-cloud.html">Learn more</a>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-lock"></i>
+          <h2>Security Audit</h2>
+          <p>Performed IAM policy audits and compliance scans in AWS cloud.</p>
+          <a href="security.html">Learn more</a>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-database"></i>
+          <h2>Database Optimization</h2>
+          <p>Reduced SQL load time by 60% with indexing and query optimization.</p>
+          <a href="database.html">Learn more</a>
+        </div>
+      </div>
+      
+      <button class="scroll-btn right" onclick="scrollServices(1)">&#10095;</button>
     </div>
+  </div>
+</div>
+
 
     <!-- ---------Portfolio--------- -->
     <div id="portfolio">
@@ -114,7 +133,9 @@
                     <div class="layer">
                         <h3>Keylogger</h3>
                         <p>A keylogger is a type of malware or hardware that records the keys a user types on a keyboard.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="keylogger.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com/yourusername/keylogger" target="_blank"><i class="fab fa-github"></i></a>
+
                     </div>
                 </div>
                 <div class="work">
@@ -122,7 +143,10 @@
                     <div class="layer">
                         <h3> AWS Cloud Cost Optimization</h3>
                         <p>The Lambda function fetches all EBS snapshots owned by the same account ('self') and also retrieves a list of active EC2 instances (running and stopped). For each snapshot, it checks if the associated volume (if exists) is not associated with any active instance. If it finds a stale snapshot, it deletes it, effectively optimizing storage costs.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                       <a href="cost-optimization.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                       <a href="https://github.com/yourusername/keylogger" target="_blank"><i class="fab fa-github"></i></a>
+
+
                     </div>
                 </div>
                 <div class="work">
@@ -130,11 +154,16 @@
                     <div class="layer">
                         <h3>VPC with  Public -Private Subnet in Production  environment</h3>
                         <p>To improve resiliency, deploy the servers in two AZ, by using an ASG and an ALB. For additional security, deploy the servers in private subnets. The servers receive requests through the load balancer. The servers can connect to the internet by using a NAT gateway. To improve resiliency, you deploy the NAT gateway in both AZ</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="vpc-architecture.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com/yourusername/keylogger" target="_blank"><i class="fab fa-github"></i></a>
+
+
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn">See More</a>
+            <a href="work.html" class="btn">See More</a>
+
+
         </div>
     </div>
 
@@ -213,5 +242,19 @@
                 .catch(error => console.error('Error!', error.message));
         });
     </script>
+
+<script>
+  function scrollServices(direction) {
+    const container = document.getElementById('servicesScroll');
+    const scrollAmount = 320; // approx card width + margin
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+
+
 </body>
 </html>

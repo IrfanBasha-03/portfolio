@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VPC Architecture - Irfan Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/ea04e0257c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+  <nav>
+    <img src="image/logo.png" class="logo">
+    <ul id="sidemenu">
+      <li><a href="index.html#header">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#portfolio">Portfolio</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <i class="fas fa-times" onclick="closemenu()"></i>
+    </ul>
+    <i class="fas fa-bars" onclick="openmenu()"></i>
+  </nav>
+</div>
+
+<div class="container">
+  <h1 class="sub-title">VPC with Public-Private Subnet</h1>
+  <img src="image/vpc.png" style="max-width:100%; border-radius: 10px;">
+
+  <p>This production-ready VPC design ensures high availability and security by distributing resources across multiple Availability Zones and using both public and private subnets. It includes NAT gateways, an Application Load Balancer, and auto-scaling EC2 instances.</p>
+
+  <h2>Technologies Used</h2>
+  <ul>
+    <li>AWS VPC, Subnets, Route Tables</li>
+    <li>EC2 with Auto Scaling</li>
+    <li>ALB (Application Load Balancer)</li>
+    <li>NAT Gateway</li>
+  </ul>
+
+  <h2>Challenges Faced</h2>
+  <ul>
+    <li>Routing public and private subnet traffic securely.</li>
+    <li>High-availability NAT Gateway setup across AZs.</li>
+    <li>Designing fault-tolerant infrastructure.</li>
+  </ul>
+
+  <h2>Sample Terraform Code Snippet</h2>
+  <pre><code>
+resource "aws_vpc" "main" {
+  cidr_block = "10.0.0.0/16"
+}
+
+resource "aws_subnet" "public" {
+  vpc_id = aws_vpc.main.id
+  cidr_block = "10.0.1.0/24"
+  map_public_ip_on_launch = true
+  availability_zone = "ap-south-1a"
+}
+  </code></pre>
+
+  <a href="index.html#portfolio" class="btn">← Back to Portfolio</a>
+</div>
+
+<div class="copyright">
+  <p>Copyright © Irfan. Made with <i class="fa-solid fa-heart"></i></p>
+</div>
+
+<script>
+  var sidemenu = document.getElementById("sidemenu");
+  function openmenu() { sidemenu.style.right = "0"; }
+  function closemenu() { sidemenu.style.right = "-200px"; }
+</script>
+</body>
+</html>
